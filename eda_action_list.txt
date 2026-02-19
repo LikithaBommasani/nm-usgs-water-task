@@ -1,0 +1,32 @@
+Action list (based on EDA )
+
+1. Parse time, last_modified (string → datetime)
+   Current: time, last_modified is str for all 769 rows.
+   Needed for: “most recent measurement”, sorting, and time-window validation.
+
+2. Convert value (string → numeric)
+   Current: value is str 
+   Needed for: min/max/avg summary and detecting 0s reliably.
+
+3. Handle missing value rows
+   Decision: drop rows where value is null for cleaned dataset and summary stats.
+   Note: site USGS-08291000 has 75.34% missing values (55/73) — expect big row drop from that site.
+
+4. Validate zero discharge behavior
+   Current: Site USGS-08317950 has 75 zeros out of 88 observations (85.23%).
+   Approach: treat 0 as valid discharge, do not drop; just report it in summary.
+
+5. Decide how to treat qualifier
+   Current: qualifier is 82.7% missing (636 rows).
+   Approach: Drop the column.
+
+6. Column selection for the cleaned CSV
+   Keep only the columns required for analysis and context:
+   id, monitoring_location_id, monitoring_location_name, site_type, time,last_modified, parameter_code, parameter_name, value, unit_of_measure, statistic_id, statistic_description, approval_status, agency_name, state_name, county_name 
+
+
+Validation checks after cleaning
+
+Confirm time is datetime and value is numeric.
+
+Confirm no nulls remain in value (and optionally time).
