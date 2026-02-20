@@ -49,10 +49,12 @@
 - **Total Observations**: 811 measurements
 
 ### How to Run
-1. Activate virtual environment: `source .venv/bin/activate` (macOS/Linux) or `.venv\Scripts\activate` (Windows)
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the script: `python main.py`
-4. View results in the `outputs/` directory and console output
+1. Create virtual environment :  `python3 -m venv .venv`
+2. Activate virtual environment: `source .venv/bin/activate` (macOS/Linux) or `.venv\Scripts\activate` (Windows)
+3. Install dependencies: `pip install -r requirements.txt`
+4. Create a .env file : `touch .env` and copy the content of .env.example file and change any configuration if required.
+5. Run the script: `python main.py`
+6. View results in the `outputs/` directory and console output
 
 ### Summary Output
 The script produces:

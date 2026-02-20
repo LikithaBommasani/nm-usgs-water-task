@@ -4,12 +4,12 @@
 # Python cache
 __pycache__/
 *.pyc
-
+*.pyc.env
 # Mac files
 .DS_Store
 
 #Outputs
 outputs/
 
-*.pyc.env
-outputs/
+# .env File
+.env
